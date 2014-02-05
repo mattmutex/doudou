@@ -3,8 +3,34 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'bootstrap-sass'
+
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem "rb-readline", "~> 0.5.0"
+end
+
+group :production do
+  gem 'mysql2'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'libnotify'
+end
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'faker'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -16,7 +42,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -33,13 +59,5 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-gem 'capistrano', '~> 3.1.0', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
