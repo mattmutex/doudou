@@ -1,0 +1,29 @@
+<h1>Listing bears</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bears.each do |bear| %>
+      <tr>
+        <td><%= bear.name %></td>
+        <td><%= bear.description %></td>
+        <td><%= link_to 'Show', bear %></td>
+        <td><%= link_to 'Edit', edit_bear_path(bear) %></td>
+        <td><%= link_to 'Destroy', bear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bear', new_bear_path %>

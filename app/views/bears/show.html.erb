@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bear.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bear.description %>
+</p>
+
+<%= link_to 'Edit', edit_bear_path(@bear) %> |
+<%= link_to 'Back', bears_path %>
