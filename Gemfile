@@ -8,15 +8,16 @@ gem 'bootstrap-sass'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+gem 'sqlite3'
+
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem "rb-readline", "~> 0.5.0"
 end
 
 group :production do
-  gem 'sqlite3'
+
 end
 
 group :test do
