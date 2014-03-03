@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bear.name %>
-</p>
+<br>
+<div class="row">
+  <div class="span2">Nom</div>
+  <div class="span2">Description</div>
+  <div class="span2">Image</div>
+  <div class="span2"></div>
+</div>
+<div class="row">
+  <div class="span2">
+    <%= @bear.name %>
+  </div>
+  <div class="span2">
+    <%= @bear.description %>
+  </div>
+  <div class="span2">
+    <%= @bear.picture %>
+  </div>
+  <div class="span2">
+    <%= link_to 'Edit', edit_bear_path(@bear) %> |
+    <%= link_to 'Back', bears_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bear.description %>
-</p>
 
-<%= link_to 'Edit', edit_bear_path(@bear) %> |
-<%= link_to 'Back', bears_path %>
+
+

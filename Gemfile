@@ -7,6 +7,10 @@ gem "twitter-bootstrap-rails"
 
 gem 'sqlite3'
 
+gem 'carrierwave'
+
+gem 'simple_form', '~> 3.0.0'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'

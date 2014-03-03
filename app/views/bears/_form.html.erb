@@ -1,25 +1,24 @@
-<%= form_for(@bear) do |f| %>
+<%= simple_form_for @bear, html: {class: 'form-vertical'} do |f| %>
+
+
   <% if @bear.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@bear.errors.count, "error") %> prohibited this bear from being saved:</h2>
-
+      <h2>Attention : Il y a <%= pluralize(@bear.errors.count, "erreur") %> !</h2>
       <ul>
-      <% @bear.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @bear.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.input :name, :inline_label => true, :label => "Nom" %>
+    <%= f.input :description, :as => :text, :label => "Description" %>
+    <%= f.input :picture, :as => :file, :label => "Image" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit 'Enregistrer', class: 'btn btn-primary' %>
+    <%= link_to 'Annuler', class: 'btn btn-danger' %>
   </div>
 <% end %>
